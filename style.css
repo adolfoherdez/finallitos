@@ -7,109 +7,104 @@ body {
     display: flex;
     flex-direction: column;
 }
+/* Estilo del header */
 header {
-    background-color: #004aad;
-    color: rgb(0, 0, 0);
-    padding: 10px 0;
-    text-align: center;
-
-}
-.header {
-    background-color: #004aad;
-    display: flex;
-    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     align-items: center;
+  }
+  
+  /* Personaliza el fondo del menú */
+  .topnav {
+    background-color: #004aad;
+    overflow: hidden;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .topnav .logo {
     height: 150px;
-    padding: 5px 10%;
-}
-
-.header .logo {
-    cursor: pointer;
-    margin-right: auto;
-}
-
-.header .logo img {
-    height: 135px;
-    width: auto;
-    transition: all 0.3s;
-}
-
-.header .logo img:hover {
-    transform: scale(1.2);
-}
-
-.header .nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center; /* Alineamos los elementos de la navegación verticalmente */
-}
-
-.header .nav-links li {
-    display: inline-block;
-    padding: 7 20px;
-}
-
-.header .nav-links li:hover {
-    transform: scale(1.2);
-}
-
-.header .nav-links a {
-    font-weight: 700;
-    color: #eceff1;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Enlaces */
+  .topnav a {
+    float: right;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 40px;
     text-decoration: none;
-}
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* Hover de enlaces */
+  .topnav a:hover {
+    background-color: #004aad;
+    color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* Enlace activo */
+  .topnav a.active {
+    background-color: #004aad;
+    color: #004aad;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* Ícono de hamburguesa */
+  .topnav .icon {
+    display: none;
+  }
+  
+  /* Responsividad */
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) { display: none; }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+    .topnav.responsive {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .topnav.responsive a {
+      display: block;
+      text-align: left;
+    }
+  }
+  
 
-.header .nav-links li a:hover {
-    color: #ffbc0e;
-}
-
-.header .btn button:hover {
-    background-color: #e2f1f8;
-    color: #ffbc0e;
-    transform: scale(1.2);
-}
-.logo-nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    display: inline-block;
-}
-
+/* Añadir un margen superior al contenido debajo del header */
 main {
-    flex: 1;
-    padding: 20px;
-}
-
+    margin-top: 140px; /* Ajusta el valor según el tamaño de tu header */
+  }
+  
+  /* O, si el contenido está en un contenedor específico */
+  .contenedor {
+    margin-top: 140px; /* Ajusta el valor según el tamaño de tu header */
+  }
+  
+  
 h1 {
     text-align: center;
 }
-
 .prox {
     text-align: center;
-}
+  }
 
+  /* Estilo para la imagen */
+  .responsive-img {
+    width: 100%;  /* La imagen ocupará el 100% del ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 800px; /* Limita el tamaño máximo de la imagen para evitar que sea demasiado grande */
+  }
 .xd {
     display: flex;
     justify-content: space-between;
@@ -118,21 +113,14 @@ h1 {
     margin: 0 auto;
     padding: 20px;
 }
-
 .left {
     flex: 1;
     margin-right: 40px;
 }
-
 .left img {
     max-width: 100%;
     height: auto;
     display: block;
-}
-
-.right {
-    flex: 1;
-    text-align: justify;
 }
 
 footer {
@@ -142,60 +130,62 @@ footer {
     padding: 10px 0;
     margin-top: auto;
 }
+/* General styles for the carousel */
 .carousel {
     position: relative;
-    width: 1000px;
-    height: 600px;
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    max-width: 1000px; /* Limita el ancho en pantallas grandes */
+    height: auto; /* Ajusta automáticamente la altura */
     overflow: hidden;
     margin: 20px auto;
     border-radius: 8px;
-    display: flex; /* Habilita el uso de flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
 }
-
-.carousel-images {
+.carousel-inner img {
+    width: 100%; /* Las imágenes ocupan todo el ancho */
+    height: auto; /* Mantiene la proporción original */
+    object-fit: cover; /* Asegura que se vea bien en cualquier tamaño */
+}
+/* Controls for navigation */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5%; /* Ajusta el tamaño del botón */
+    height: auto;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    align-items: center; /* Alinea imágenes en el centro verticalmente */
-    width: auto; /* Permite que la imagen mantenga su proporción */
-    height: 100%; /* La altura del contenedor */
-    max-height: 100%; /* Asegura que la imagen no exceda la altura del carrusel */
-    object-fit: contain; /* Mantiene la proporción y centra la imagen */
-}
-
-.carousel-item {
-    min-width: 100%;
-    display: none; /* Ocultar todas las imágenes */
-}
-
-.carousel-item.active {
-    display: block; /* Mostrar solo la imagen activa */
-}
-
-button, 
-.contact-form input[type="submit"] {
-    background-color: #004aad;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    font-weight: bold;
+    z-index: 10;
 }
-button:hover,
-.contact-form input[type="submit"]:hover {
-    background-color: #003580;
-    transform: scale(1.1);
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
-
-
-.prev {
+.carousel-control.left {
     left: 10px;
 }
 
-.next {
+.carousel-control.right {
     right: 10px;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .carousel {
+        width: 100%; /* Ocupa el ancho completo del dispositivo */
+        height: auto; /* Ajusta la altura dinámicamente */
+    }
+
+    .carousel-inner img {
+        object-fit: contain; /* Centra y ajusta las imágenes */
+    }
+
+    .carousel-control {
+        width: 8%; /* Botones más grandes para pantallas pequeñas */
+    }
 }
 section {
     border: 1px solid #ccc; /* Borde temporal para ver los contenedores */
@@ -203,88 +193,67 @@ section {
     padding: 10px; /* Espaciado interno */
     background-color: white; /* Fondo blanco para mayor contraste */
 }
-
-.contenido-publicidad{
+.contenido-publicidad {
     display: flex;
-    justify-content: center;
-    margin: 0 100px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.box-style{
-    text-align: center;
-    margin: 20px;
-    border-radius: 20px;
-    transition: transform 0.5s ease;
-    font-size: 15px;
-    border-color: #004aad;
-}
-
-.box-style:hover{
-    transform: scale(1.1);
-}
-
-
-.box-style2 {
-    display: flex;
-    align-items: flex-start; /* Alinea la imagen y el texto en la parte superior */
-    margin: 5px;
-    border-radius: 20px;
-    font-size: 15px;
-    border: 3px solid #ffffff;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten */
+    justify-content: space-around; /* Distribuir uniformemente */
+    gap: 20px; /* Espacio entre elementos */
+    margin: 0 auto; /* Centrar contenido */
     padding: 20px;
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
-    max-width: 1000px; /* Limitar el ancho máximo */
-    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
-    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+    box-sizing: border-box;
 }
-
-.box-style2 p {
-    margin: 5px;
-    line-height: 1.6;
-}
-
-.box-style2 .foto {
-    flex: 0 30%; /* La imagen ocupa el 40% del contenedor */
-    height: auto;
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
-    border-radius: 10px;
-    display: block;
-    max-width: 100%; /* Evita que las imágenes sean más grandes que el contenedor */
-}
-
-.box-style2 .contenido-texto {
-    flex: 1; /* Ocupa el espacio restante */
-    font-size: 14px;
-    overflow: hidden; /* Evita que el texto desborde fuera del contenedor */
-}
-
-.contenido-publicidad2 {
-    display: flex;
-    flex-wrap: wrap; /* Permite que el contenido se ajuste a la siguiente línea si es necesario */
-    justify-content: flex-start;
-    margin: 0 20px;
-    box-sizing: border-box; /* Asegura que el margen no afecte el tamaño total */
-}
-
-
-
-
-
-.titulo-publicidad{
+.box-style {
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    flex: 1 1 calc(45% - 20px); /* Toma el 45% del ancho y ajusta */
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    border: 2px solid #004aad;
+    padding: 10px;
+}
+.box-style img {
+    max-width: 100%; /* Imagen completamente adaptativa */
+    height: auto;
+    border-radius: 10px;
+}
+.box-style:hover {
+    transform: scale(1.05);
+}
+.titulo-publicidad {
+    text-align: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     font-size: 20px;
+    margin: 20px 10px;
 }
+/* Estilos para móviles */
+@media screen and (max-width: 768px) {
+    .contenido-publicidad {
+        flex-direction: column; /* Coloca los elementos en una columna */
+        align-items: center; /* Centra los elementos */
+    }
 
+    .box-style {
+        flex: 1 1 100%; /* Toma todo el ancho en móviles */
+        margin: 10px 0;
+    }
+
+    .titulo-publicidad {
+        font-size: 18px; /* Ajustar tamaño de texto */
+    }
+    .contenido-texto{
+        text-align: center;
+    }
+}
 .servicios-mensajeria{
-    width: 310px;
-    margin: 20px; 
+    width: auto;
+    margin: auto; 
 }
-
+.contenido-texto{
+    text-align: justify;
+}
 .muestras-humanas{
-    width: 310px;
-    margin: 20px;
+    width: auto;
+    margin: auto;
 }
 .foto{
     width: 300px;
@@ -298,111 +267,45 @@ section {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .contact-form,
 .contact-info {
     flex: 1;
 }
-
 .contact-form {
     margin-right: 20px; /* Espacio entre el formulario y el separador */
 }
-
 .contact-info {
     margin-left: 20px; /* Espacio entre el separador y los datos de contacto */
 }
-
 .contact-form h3,
 .contact-info h3 {
     margin-bottom: 20px;
     color: #004aad;
 }
-
 .contact-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.checkbox-group {
-    margin-bottom: 15px;
-}
-
-.contact-form input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.contact-form input[type="submit"] {
-    background-color: #004aad;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
 .contact-form input[type="submit"]:hover {
     background-color: #003580;
 }
-
-.separador {
-    flex: 0 0 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.separador img {
-    width: 80px;
-    height: 600px;
-}
-
 .contact-info p {
     margin-bottom: 15px;
 }
-
 .contact-info a {
     color: #004aad;
     text-decoration: none;
 }
-
 .contact-info a:hover {
     text-decoration: underline;
 }
-.mapa{
-    text-align: center;
-}
-
-#userActions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#userActions h2 {
-    margin-bottom: 20px; /* Añade espacio entre el título y el botón */
-}
-
 /* Título principal */
 h2 {
     text-align: center;
     color: #333;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 /* Estilos del formulario */
 form {
     display: flex;
@@ -410,12 +313,10 @@ form {
     gap: 15px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
 form label {
     font-size: 14px;
     color: #555;
 }
-
 form input {
     padding: 10px;
     font-size: 16px;
@@ -424,7 +325,6 @@ form input {
     width: 100%;
     box-sizing: border-box;
 }
-
 form button {
     padding: 12px;
     font-size: 16px;
@@ -435,42 +335,33 @@ form button {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
 form button:hover {
     background-color: #004aad;
 }
-
 /* Estilos de la tabla */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-
 th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
 th {
     background-color: #f2f2f2;
     color: #333;
 }
-
 tr:hover {
     background-color: #f9f9f9;
 }
-
 /* Estilos para los mensajes de error o vacíos */
 #errorMessage {
     color: red;
     text-align: center;
     margin-top: 20px;
 }
-
-
-
 .detalles {
     display: flex;
     align-items: flex-start;
@@ -483,31 +374,27 @@ tr:hover {
     font-family: Arial, sans-serif;
     color: #374151; /* Texto en gris oscuro */
 }
-
 .icono {
     margin-right: 20px;
 }
-
 .icono img {
     width: 40px; /* Tamaño del ícono */
     height: 40px;
 }
-
 .contenido h3 {
     margin: 0;
     font-size: 1.2em;
     color: #1f2937; /* Tono más oscuro para el título */
     margin-bottom: 10px;
 }
-
 .contenido p {
     margin: 5px 0;
     line-height: 1.6; /* Espaciado entre líneas */
 }
-
 .contenido p strong {
     color: #1d4ed8; /* Color azul para resaltar */
 }
+/* Estilo para el contenedor de la valla móvil */
 .valla-movil {
     display: flex;
     align-items: center;
@@ -517,57 +404,72 @@ tr:hover {
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 1200px; /* Ajusta el tamaño máximo del contenedor */
-    margin: 20px auto; /* Centra horizontalmente */
+    max-width: 1200px;
+    margin: 20px auto;
     font-family: Arial, sans-serif;
-}
+  }
 
-.valla-movil img {
+  /* Estilo para la imagen */
+  .valla-movil img {
     width: 40%; /* Imagen ocupa el 40% del espacio */
     height: auto;
     border-radius: 8px;
-}
+  }
 
-.valla-movil .contenido {
-    width: 60%; /* El texto ocupa el 60% del espacio */
-}
+  /* Estilo para el contenido de texto */
+  .valla-movil .right {
+    flex: 1;
+    text-align: justify;
+  }
 
-.valla-movil h2 {
+  /* Títulos y párrafos */
+  .valla-movil h2 {
     margin: 0 0 10px;
     font-size: 3.5em;
     color: #1f2937;
-}
+  }
 
-.valla-movil p {
+  .valla-movil p {
     margin: 5px 0;
     line-height: 1.6;
     color: #374151;
-}
+  }
 
-.valla-movil p strong {
+  .valla-movil p strong {
     color: #1d4ed8;
-}
+  }
 
+  /* Responsividad para pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+    /* En pantallas más pequeñas, la imagen va a ocupar todo el ancho y se coloca encima del texto */
+    .valla-movil {
+      flex-direction: column; /* Cambia la dirección del contenedor a columna */
+      align-items: center; /* Centra los elementos */
+    }
 
+    /* La imagen ocupa el 100% del contenedor */
+    .valla-movil img {
+      width: 100%;
+      margin-bottom: 20px; /* Da espacio entre la imagen y el texto */
+    }
 
-
-
-
-
-
+    /* El texto ocupa el 100% del ancho, ajustando la alineación */
+    .valla-movil .right {
+      width: 100%;
+      text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+  }
 /* Sección de clientes */
 #clients {
     text-align: center;
     padding: 40px 20px;
     background-color: #ffffff;
 }
-
-#clients h2 {
-    font-size: 2rem;
+#clients h1 {
+    font-size: 1.8rem;
     margin-bottom: 20px;
     color: #333;
 }
-
 /* Carrusel */
 .carousel2 {
     position: relative;
@@ -575,22 +477,24 @@ tr:hover {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
-    height: 120px;
+    height: 100px; /* Ajusta la altura en móviles */
 }
-
 .carousel-track {
     display: flex;
-    animation: scroll 10s linear infinite;
-    width: calc(200px * 8); /* Ajusta según el número total de imágenes */
+    align-items: center;
+    animation: scroll 65s linear infinite;
+    width: calc(200px * 60); /* Ajusta según el número total de imágenes */
 }
-
-.carousel-item {
-    width: 200px; /* Ancho de los logos */
-    margin: 0 10px; /* Espaciado entre los logos */
-    flex-shrink: 0;
+.carousel-track img {
+    width: 240px; /* Ajuste inicial para logos */
     height: auto;
+    margin: 0 10px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
 }
-
+.carousel-track img:hover {
+    transform: scale(1.1);
+}
 /* Animación del carrusel */
 @keyframes scroll {
     0% {
@@ -598,5 +502,94 @@ tr:hover {
     }
     100% {
         transform: translateX(-50%); /* Mover hasta la mitad para efecto infinito */
+    }
+}
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    #clients h1 {
+        font-size: 1.5rem;
+    }
+    .carousel2 {
+        height: 80px; /* Reduce la altura para móviles */
+    }
+    .carousel-track img {
+        width: 100px; /* Reduce el tamaño de los logos */
+        margin: 0 5px; /* Menor espacio entre imágenes */
+    }
+}
+@media screen and (max-width: 480px) {
+    .carousel2 {
+        height: 70px; /* Altura aún menor en pantallas pequeñas */
+    }
+    .carousel-track img {
+        width: 80px; /* Reduce aún más los logos */
+        margin: 0 3px;
+    }
+}
+/* Sección de clientes */
+#clients3 {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+#clients3 h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+/* Carrusel */
+.carousel3 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 100px; /* Ajusta la altura en móviles */
+}
+.carousel-track3 {
+    display: flex;
+    align-items: center;
+    animation: scroll 5s linear infinite;
+    width: calc(200px * 6); /* Ajusta según el número total de imágenes */
+}
+.carousel-track3 img {
+    width: 240px; /* Ajuste inicial para logos */
+    height: auto;
+    margin: 0 10px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out;
+}
+.carousel-track3 img:hover {
+    transform: scale(1.1);
+}
+/* Animación del carrusel */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Mover hasta la mitad para efecto infinito */
+    }
+}
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    #clients3 h1 {
+        font-size: 1.5rem;
+    }
+    .carousel3 {
+        height: 80px; /* Reduce la altura para móviles */
+    }
+    .carousel-track3 img {
+        width: 100px; /* Reduce el tamaño de los logos */
+        margin: 0 5px; /* Menor espacio entre imágenes */
+    }
+}
+@media screen and (max-width: 480px) {
+    .carousel3 {
+        height: 70px; /* Altura aún menor en pantallas pequeñas */
+    }
+    .carousel-track3 img {
+        width: 80px; /* Reduce aún más los logos */
+        margin: 0 3px;
     }
 }
